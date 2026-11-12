@@ -24,3 +24,12 @@ def test_lookback_must_be_positive():
     with pytest.raises(ValueError, match="lookback"):
         momentum_positions(np.array([0.1]), lookback=0)
 
+
+def test_invalid_lookback_cost_and_asset_return_are_rejected():
+    with pytest.raises(ValueError, match="positive integer"):
+        momentum_positions(np.array([0.1, 0.2]), lookback=1.5)
+    with pytest.raises(ValueError, match="finite and non-negative"):
+        net_strategy_returns(np.array([0.1]), np.array([1.0]), cost_bps=np.nan)
+    with pytest.raises(ValueError, match="-100%"):
+        net_strategy_returns(np.array([-1.0]), np.array([1.0]))
+
