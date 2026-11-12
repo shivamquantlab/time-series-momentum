@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "time-series-momentum"
+version = "0.1.0"
+description = "Strictly lagged time-series momentum signals on synthetic returns."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.0,<3", "matplotlib>=3.8,<4"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10", "ruff>=0.8,<1"]
+
+[project.scripts]
+momentum-demo = "time_series_momentum.experiment:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra -p no:cacheprovider"
+

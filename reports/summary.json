@@ -1,0 +1,9 @@
+{
+  "seed": 89,
+  "lookback_periods": 20,
+  "cost_bps_per_turnover_unit": 2.0,
+  "observations": 500,
+  "synthetic_gross_terminal_wealth": 0.9203260767637869,
+  "synthetic_net_terminal_wealth": 0.9044419558988422,
+  "active_fraction": 0.96
+}
